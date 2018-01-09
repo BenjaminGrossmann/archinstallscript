@@ -1,0 +1,5 @@
+mkfs.ext4 -L p_arch /dev/sda1
+mkswap -L p_swap /dev/sda2
+mount -L p_arch /mnt
+swapon -L p_swap
+dhcpcd
