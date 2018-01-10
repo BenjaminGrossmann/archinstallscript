@@ -1,3 +1,4 @@
+#!/bin/sh
 echo myhost > /etc/hostname
 
 echo LANG=de_DE.UTF-8 > /etc/locale.conf
