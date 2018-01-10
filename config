@@ -1,0 +1,23 @@
+echo myhost > /etc/hostname
+
+echo LANG=de_DE.UTF-8 > /etc/locale.conf
+echo LC_COLLATE=C >> /etc/locale.conf
+echo LANGUAGE=de_DE >> /etc/locale.conf
+
+cp locale.gen locale.gen.bak
+echo de_DE.UTF-8 UTF-8 > locale.gen
+echo de_DE ISO-8859-1 >> locale.gen
+echo de_DE@euro ISO-8859-15 >> locale.gen
+echo en_US.UTF-8 >> locale.gen
+
+locale-gen
+
+echo KEYMAP=de-latin1 > /etc/vconsole.conf
+echo FONT=lat9w-16 >> /etc/vconsole.conf
+
+ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+
+
+echo #<ip-address>	<hostname.domain.org>	<hostname> > /etc/hosts
+echo 127.0.0.1	localhost.localdomain	localhost >> /etc/hosts
+echo ::1		localhost.localdomain	localhost >> /etc/hosts
